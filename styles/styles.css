@@ -11,5 +11,8 @@ section {
 }
 
 main {
-    margin: 40px;
+    margin: 20px;
+}
+.ant-card-body{
+    height: 92%;
 }
