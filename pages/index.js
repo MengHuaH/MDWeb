@@ -48,7 +48,7 @@ const Index = () => {
       <Card
         title={<DatePicker onChange={onChange} />}
         bordered={false}
-        style={{ overflow: "scroll", height: "100%" }}
+        style={{ overflow: "auto", height: "100%" }}
       >
         <CodeTable data={dataSource} type="CodeTable"></CodeTable>
       </Card>

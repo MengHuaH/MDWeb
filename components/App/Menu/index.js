@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Menu } from "antd";
 import Link from "next/Link";
 function getItem(label, key, children, type) {
@@ -22,9 +23,15 @@ const items = [
   getItem(<Link href="/Settings">设置</Link>, "/Setting"),
 ];
 const App = () => {
+  var defaultSelectedKeys = []
   const onClick = (e) => {
+    console.log()
     console.log("click ", e);
   };
+  
+  useEffect(() => {
+    defaultSelectedKeys.push(window.location.pathname)
+  }, []);
   return (
     <Menu
       theme={"dark"}
@@ -32,8 +39,8 @@ const App = () => {
       style={{
         width: 200,
       }}
-      defaultSelectedKeys={["/"]}
-      defaultOpenKeys={["sub"]}
+      defaultSelectedKeys={defaultSelectedKeys}
+      defaultOpenKeys={["sub","Record"]}
       mode="inline"
       items={items}
     />
